@@ -201,8 +201,8 @@ export default function App() {
   )
 
   useEffect(() => {
-    fetch('/weimar-buildings-3d.geojson').then((r) => r.json()).then(setBuildings)
-    fetch('/weimar-streets.geojson').then((r) => r.json()).then(setStreets)
+    fetch(`${import.meta.env.BASE_URL}weimar-buildings-3d.geojson`).then((r) => r.json()).then(setBuildings)
+    fetch(`${import.meta.env.BASE_URL}weimar-streets.geojson`).then((r) => r.json()).then(setStreets)
   }, [])
 
   const ready = buildings && streets && edges
