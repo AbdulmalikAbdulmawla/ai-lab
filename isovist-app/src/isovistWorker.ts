@@ -55,5 +55,5 @@ self.onmessage = (e: MessageEvent) => {
     positions[p++] = ox + Math.cos(a1) * t1; positions[p++] = Y; positions[p++] = oz + Math.sin(a1) * t1
   }
 
-  self.postMessage({ positions }, [positions.buffer])
+  ;(self as unknown as Worker).postMessage({ positions }, [positions.buffer])
 }
